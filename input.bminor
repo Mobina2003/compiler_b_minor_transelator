@@ -1,0 +1,58 @@
+// Multiline comment test
+/* This is a
+   multiline comment
+   that spans multiple lines */
+
+// Global variables
+width: integer = 100;
+height: integer = 200;
+name: string = "ArrayProcessor";
+is_active: boolean = true;
+
+// Array declarations
+static_array: array [5] integer = {1, 2, 3, 4, 5};
+dynamic_array: array [10] integer = new array[10];
+
+// Function with parameters
+process_data: function integer (input: integer) = {
+    // Local variables
+    temp: integer = input * 2;
+    power_val: integer = 2 ^ input;  // Power operator
+    
+    // Array access
+    static_array[0] = temp;
+    
+    // Print statements
+    print "Processing: ", name, "\n";
+    print "Input: ", input, " Temp: ", temp, " Power: ", power_val, "\n";
+    
+    return temp;
+}
+
+// Main function
+main: function integer () = {
+    // Another multiline comment
+    /* This comment tests
+       the multiline handling */
+    
+    print "Program: ", name, " starting...\n";
+    
+    if (is_active) {
+        // Function call
+        result: integer = process_data(width);
+        print "Result: ", result, "\n";
+        
+        // Array initialization loop
+        i: integer;
+        for(i = 0; i < 10; i = i + 1) {
+            dynamic_array[i] = i ^ 2;  // Power operator in loop
+            print "Array[", i, "] = ", dynamic_array[i], "\n";
+        }
+    } 
+    else 
+    {
+        print "Program is inactive.\n";
+    }
+    
+    return 0;
+}
